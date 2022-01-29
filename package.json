@@ -1,0 +1,17 @@
+{
+  "name": "@kellan/fast-db",
+  "version": "1.0.1",
+  "description": "a fast databse",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "db"
+  ],
+  "author": "Kellan Butler",
+  "license": "ISC",
+  "dependencies": {
+    "@kellan/fast-db": "^1.0.0"
+  }
+}
