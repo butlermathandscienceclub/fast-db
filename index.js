@@ -1,23 +1,23 @@
 const fs = require("fs");
 var db = {
     obj: {},
-    get_val(i) {
-        return this.obj[i];
+    get_val(e) {
+        return this.obj[e]
     },
-    set_val(name, val) {
-        this.obj[name] = val;
+    set_val(e, o) {
+        this.obj[e] = o
     },
-    save(name) {
-        fs.appendFile(`./db/${name}.json`, JSON.stringify(this.obj), function(err) {
-            if (err) throw err;
-            console.log('Saved!');
-        });
+    save(e) {
+        fs.appendFile(`./${e}.json`, JSON.stringify(this.obj), function(e) {
+            if (e) throw e;
+            console.log("Saved!")
+        })
     },
-    del_val: (name) => {
-        delete this.obj[name];
+    del_val: e => {
+        delete this.obj[e]
     },
-    load: (name) => {
-        db.obj = require(`./db/${name}.json`)
+    load: e => {
+        db.obj = require(`./${e}.json`)
     }
 };
 module.exports = db;
