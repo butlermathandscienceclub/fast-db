@@ -6,9 +6,13 @@ var db = {
     },
     set_val(e, o) {
         this.obj[e] = o
+			fs.writeFile(`./kdb.json`, JSON.stringify(this.obj), 	function(e) {
+            if (e) throw e;
+            console.log("Saved!")
+        })
     },
-    save(e) {
-        fs.appendFile(`./${e}.json`, JSON.stringify(this.obj), function(e) {
+    save() {
+        fs.writeFile(`./kdb.json`, JSON.stringify(this.obj), function(e) {
             if (e) throw e;
             console.log("Saved!")
         })
@@ -16,8 +20,9 @@ var db = {
     del_val: e => {
         delete this.obj[e]
     },
-    load: e => {
-        db.obj = require(`./${e}.json`)
+    load:  function() {
+        db.obj = require(`./kdb.json`)
     }
 };
+
 module.exports = db;
