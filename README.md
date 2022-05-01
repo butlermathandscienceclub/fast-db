@@ -6,7 +6,7 @@ install :
 
 `npm install @kellan/fast-db`
 
-----
+---
 use:
 
 import :
@@ -17,6 +17,6 @@ add a key: `fastdb.set_val(key, val)`
 
 get key: `fastdb.get_val(key)`
 
-save: `fastdb.save(dbname)`
+save contents: `fastdb.save()`
 
-load: `fastdb.load(dbname)` 
+load from file: `fastdb.load()` 
